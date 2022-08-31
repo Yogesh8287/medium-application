@@ -1,0 +1,10 @@
+@host = http://localhost:5000/api/user
+@token =eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzBlZTYyZjA5MDgxMWQyNjEwMTg2YjciLCJuYW1lIjoiaGFyZGlrIiwiaWF0IjoxNjYxOTQ0NDQwLCJleHAiOjE2NjE5NTUyNDB9.JMowoKljMDTq166UpopiELdwS2G4-TdH73Xc6J7LawE
+###
+
+GET {{host}}
+Authorization: Bearer {{token}}
+
+
+
+

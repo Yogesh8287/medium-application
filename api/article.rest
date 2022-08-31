@@ -1,0 +1,48 @@
+@host =  http://localhost:5000/api/article
+@token =eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzBlMmY4YmNhOTY1YjZmYWJmNjRkNTQiLCJuYW1lIjoiaGFyZGlrIiwiaWF0IjoxNjYxOTU0MDMxLCJleHAiOjE2NjE5NzU2MzF9.V681YXAWBpzXS95ytJ64NlEX7TlQ9McOb5iHVnE7JnY
+GET {{host}}
+Authorization: Bearer {{token}}
+
+###
+
+GET {{host}}/630f0d2c96f314b1ade01e9e
+Authorization: Bearer {{token}}
+
+###
+POST {{host}}
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "title":"Node",
+    "description":"Node",
+    "author" :"630e2f8bca965b6fabf64d54",
+    "tags":"#node"
+}
+
+###
+PUT {{host}}/630f682d68f8baf051fad2e1/like
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+     "likes":["630e2f8bca965b6fabf64d54"]
+}
+
+###
+PUT {{host}}/630f682d68f8baf051fad2e1/comment
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "comment":"nice"
+}
+
+###
+PUT {{host}}/630f682d68f8baf051fad2e1/630f686a68f8baf051fad2e7/reply
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "reply":"Thanks"
+}

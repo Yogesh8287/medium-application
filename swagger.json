@@ -1,0 +1,96 @@
+{
+"swagger": "4.5.0",
+"info": {
+  "version": "1.0.0", 
+  "title": "medium-app",
+  "description": "",
+  "license": {
+    "name": "ISC"
+  }
+},
+"host": "localhost:5000",
+"basePath": "/api",
+"securityDefinitions": {
+    "JWT": {
+      "type": "apiKey",
+      "description": "JWT authorization of an API",
+      "name": "Authorization",
+      "in": "header"
+    }
+  },
+"tags": [
+  {
+    "name": "Article",
+    "description": "API for articles in the system"
+  },
+  {
+    "name": "User",
+    "description": "API for users in the system"
+  },
+  {
+    "name": "Auth",
+    "description": "API for users authotication in the system"
+  },
+  {
+    "name": "Search",
+    "description": "API for users search article in the system"
+  }
+],
+
+"schemes": ["http"],
+"consumes": ["application/json"],
+"produces": ["application/json"],
+"paths": {
+    "/user": {
+      "get": {
+        "tags": ["Users"],
+        "summary": "Get all users",
+        "responses": {
+          "200": {
+            "description": "ok",
+            "schema": {
+              "$ref": "#/definitions/Users"
+            }
+          }
+        }
+      }
+    },
+    "/users": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "query",
+          "required": true,
+          "description": "Id of the user which is to be searched",
+          "type": "integer"
+        }
+      ],
+  "definitions": {
+    "User": {
+      "properties": {
+        "id": {
+          "type": "integer",
+          "uniqueItems": true
+        },
+        "name": {
+          "type": "string"
+        },
+    
+        "email": {
+          "type": "string"
+        },
+        "password":{
+            "type":"string"
+        },
+        "bookmark":{
+            "type": "array"
+        }
+      }
+    },
+    "Users": {
+      "type": "array",
+      "$ref": "#/definitions/User"
+    }
+    }
+}
+}}
